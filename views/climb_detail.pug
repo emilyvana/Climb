@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1 Climb Detail
+
+  dl
+    dt Grade
+    dd #{climb.gradeclimb}
+
+    dt Location
+    dd #{climb.location ? climb.location.gym + ', ' + climb.location.city : 'N/A'}
+
+    dt Date
+    dd #{climb.climbDate ? climb.climbDate.toDateString() : 'No date specified'}
+
+    if climb.wall
+      dt Wall
+      dd #{climb.wall.name}
+
+  a.btn.btn-primary(href=`/catalog/climb/${climb._id}/update`) Edit
+  a.btn.btn-danger(href=`/catalog/climb/${climb._id}/delete`) Delete
+  br
+  a(href="/catalog/climbs") Back to Climb List

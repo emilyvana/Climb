@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Climb List
+
+  if level_list.length
+    ul
+      each climb in level_list
+        li
+          a(href=`/catalog/climb/${climb._id}`) #{climb.gradeclimb} — #{climb.location ? climb.location.gym + ', ' + climb.location.city : 'No location'} — #{climb.climbDate ? new Date(climb.climbDate).toDateString() : 'No date'}
+  else
+    p No climbs found.
+
+  br
+  a.btn.btn-primary(href="/catalog/climb/create") Add New Climb

@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 Delete Wall
+  p Are you sure you want to delete the wall "#{wall.name}"?
+
+form(method="POST", action=`/catalog/wall/${wall._id}/delete`)
+  button.btn.btn-danger(type="submit") Delete
+  a.btn.btn-secondary(href=`/catalog/wall/${wall._id}`) Cancel

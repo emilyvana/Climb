@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='gym') Gym Name:
+      input#gym.form-control(type='text', name='gym', required, value=(location && location.gym) ? location.gym : '')
+
+    div.form-group
+      label(for='city') City:
+      input#city.form-control(type='text', name='city', required, value=(location && location.city) ? location.city : '')
+
+    div.form-group
+      label(for='wall') Wall (optional):
+      select#wall.form-control(name='wall')
+        option(value='') -- None --
+        if wall_list
+          each wall in wall_list
+            option(
+              value=wall._id,
+              selected=(location && location.wall && wall._id.toString() === location.wall.toString())
+            )= wall.name
+
+    if errors
+      ul.text-danger
+        each error in errors
+          li= error.msg
+
+    button.btn.btn-primary(type='submit') Submit

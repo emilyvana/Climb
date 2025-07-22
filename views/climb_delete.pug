@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Delete Climb Level
+  p Are you sure you want to delete the climb grade "#{level.gradelevel}"?
+
+  if level.climbDate
+    p Date: #{level.climbDate.toDateString()}
+
+  form(method="POST" action=level.url + "/delete")
+    button.btn.btn-danger(type="submit") Delete
+    a.btn.btn-secondary(href=level.url) Cancel

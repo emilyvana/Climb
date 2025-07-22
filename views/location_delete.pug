@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Delete Location
+  p Are you sure you want to delete the location "#{location.gym}" in "#{location.city}"?
+  
+  form(method="POST", action=`/catalog/location/${location._id}/delete`)
+    input(type="hidden", name="locationid", value=location._id)
+    button.btn.btn-danger(type="submit") Delete
+    a.btn.btn-secondary(href=`/catalog/location/${location._id}`) Cancel

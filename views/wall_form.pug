@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name:
+      input#name.form-control(type='text', name='name', required, value=(wall && wall.name) ? wall.name : '')
+    
+    div.form-group
+      label(for='type') Type:
+      select#type.form-control(name='type', required)
+        option(value='') Select type
+        option(value='overhang', selected=(wall && wall.type === 'overhang')) Overhang
+        option(value='cave', selected=(wall && wall.type === 'cave')) Cave
+        option(value='slab', selected=(wall && wall.type === 'slab')) Slab
+        option(value='island', selected=(wall && wall.type === 'island')) Island
+
+    div.form-group
+      label(for='description') Description:
+      textarea#description.form-control(name='description')= (wall && wall.description) ? wall.description : ''
+
+    if errors
+      ul.text-danger
+        each error in errors
+          li= error.msg
+
+    button.btn.btn-primary(type='submit') Submit

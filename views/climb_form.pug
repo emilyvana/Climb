@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  h1 Create New Climb
+
+  form(method='POST', action='')
+    //- Climb Name
+    .form-group
+      label(for='name') Climb Name
+      input#name.form-control(type='text', name='name', required, value=(climb ? climb.name : ''))
+
+    //- Location Dropdown
+    .form-group
+      label(for='location') Location
+      select#location.form-control(name='location', required)
+        option(value='') -- Select Location --
+        each loc in locations
+          option(value=loc._id selected=(climb && climb.location == loc._id ? 'selected' : false))= loc.gym + ', ' + loc.city
+
+    //- Wall Dropdown
+    .form-group
+      label(for='wall') Wall
+      select#wall.form-control(name='wall', required)
+        option(value='') -- Select Wall --
+        each w in walls
+          option(value=w._id selected=(climb && climb.wall == w._id ? 'selected' : false))= w.name
+    div.form-group
+      label(for="climbDate") Date
+      input#climbDate.form-control(type="date", name="climbDate", value=climb && climb.climbDate ? climb.climbDate.toISOString().substring(0,10) : '')
+   
+    .form-group
+      label(for='grade') Grade / Difficulty
+      input#gradeclimb.form-control(type='text', name='gradeclimb', required, value=climb ? climb.gradeclimb : '')
+
+
+  
+    button.btn.btn-primary(type='submit') Submit
+
+    
+    if errors
+      ul.text-danger
+        each err in errors
+          li= err.msg

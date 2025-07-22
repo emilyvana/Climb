@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Track your climbs!
+
+  h2 Dynamic content
+
+  p The library has the following record counts:
+
+  ul
+    li #[strong Climbs so far!:] !{level_count}
+    li #[strong Location total:] !{location_count}
+    li #[strong Walls:] !{wall_count}

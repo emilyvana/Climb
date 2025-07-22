@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 Wall Details
+  if wall
+    p Type: #{wall.type}
+    p Description: #{wall.description}
+  else
+    p No wall data found.

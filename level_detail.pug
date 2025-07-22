@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 Level Detail
+
+  dl
+    dt Grade
+    dd= level.gradelevel
+
+    if level.climbDate
+      dt Climb Date
+      dd= level.climbDate.toDateString()
+
+    if level.location
+      dt Location
+      dd
+        a(href=level.location.url)= level.location.gym + ' – ' + level.location.city
+    else
+      dt Location
+      dd i Not specified
+
+  hr
+  a(href=level.url + '/update') Edit
+  |
+  a(href=level.url + '/delete') Delete
+  |
+  a(href='/levels') Back to list

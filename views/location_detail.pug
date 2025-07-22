@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Location Details
+
+  if location
+    p
+      strong Gym Name: 
+      | #{location.gym}
+    p
+      strong City: 
+      | #{location.city}
+    if location.wall
+      p
+        strong Wall: 
+        | #{location.wall.name ? location.wall.name : location.wall.type}
+    else
+      p No wall assigned.
+  else
+    p Location not found.
