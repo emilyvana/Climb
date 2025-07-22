@@ -1,5 +1,86 @@
+html {
+
+  font-size: 10px;
+	
+  font-family: "Bebas Neue", sans-serif;
+    background-color: #1b5d09;
+  
+  h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #581b2f;}
+  h2 {
+  font-size: 40px;
+  text-align: center;
+  color: #ee9f5b;
+}
+
+p,
+li {
+  font-size: 24px;
+  line-height: 4;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #ea7ea2;
+}
+a,
+li {
+  font-size: 20px;
+  line-height: 4;
+  letter-spacing: 2px;
+  color: #ee9f5b;
+
+}
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #082d5b;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+h1 {
+  margin: 0;
+  padding: 20px 0;
+  color: #669ef2;
+  text-shadow: 3px 3px 1px black;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.col-sm-2 {
+  background-color: orange;
+  min-height: 100vh; 
+  padding-top: 20px; 
+}
+
 .sidebar-nav {
-  margin-top: 20px;
-  padding: 0;
+  margin-top: 0;
+  padding-left: 0;
   list-style: none;
 }
+
+.sidebar-nav a {
+  display: block;
+  padding: 8px 15px;
+  font-size: 0.85rem; 
+  color: white; 
+  text-decoration: none;
+}
+
+.sidebar-nav a:hover {
+  background-color: #cc7000; 
+  color: white;
+}
+th {
+  color: #ff9900;
+}
+td {
+  color: #48ff00;
+}
+label {
+  color: #a4c7eb; 
+}
+
+
