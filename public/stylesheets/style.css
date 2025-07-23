@@ -12,7 +12,7 @@ html {
   h2 {
   font-size: 40px;
   text-align: center;
-  color: #ee9f5b;
+  color: #9759af;
 }
 
 p,
@@ -21,14 +21,14 @@ li {
   line-height: 4;
   letter-spacing: 2px;
   text-align: center;
-  color: #ea7ea2;
+  color: #9759af;
 }
 a,
 li {
   font-size: 20px;
   line-height: 4;
   letter-spacing: 2px;
-  color: #ee9f5b;
+  color: #9759af;
 
 }
 body {
@@ -50,7 +50,8 @@ img {
   max-width: 100%;
 }
 .col-sm-2 {
-  background-color: orange;
+  width: 25%;
+  background-color: #16031d;
   min-height: 100vh; 
   padding-top: 20px; 
 }
@@ -74,7 +75,7 @@ img {
   color: white;
 }
 th {
-  color: #ff9900;
+  color: #9759af;
 }
 td {
   color: #48ff00;
@@ -82,5 +83,13 @@ td {
 label {
   color: #a4c7eb; 
 }
+dt {
+  color: #9759af; 
+  font-weight: bold;
+}
 
-
+dd {
+  color: #48ff00; 
+  margin-left: 20px; 
+}
+}

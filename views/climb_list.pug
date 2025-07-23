@@ -4,10 +4,22 @@ block content
   h1 Climb List
 
   if level_list.length
-    ul
-      each climb in level_list
-        li
-          a(href=`/catalog/climb/${climb._id}`) #{climb.gradeclimb} — #{climb.location ? climb.location.gym + ', ' + climb.location.city : 'No location'} — #{climb.climbDate ? new Date(climb.climbDate).toDateString() : 'No date'}
+    table.table.table-striped
+      thead
+        tr
+          th Grade
+          th Location
+          th Date
+          th Actions
+      tbody
+        each climb in level_list
+          tr
+            td= climb.gradeclimb
+            td= climb.location ? climb.location.gym + ', ' + climb.location.city : 'No location'
+            td= climb.climbDate ? new Date(climb.climbDate).toDateString() : 'No date'
+            td
+              a.btn.btn-primary.btn-sm(href=`/catalog/climb/${climb._id}`) View
+              a.btn.btn-danger.btn-sm(href=`/catalog/climb/${climb._id}/delete`, onclick="return confirm('Are you sure you want to delete this climb?');") Delete
   else
     p No climbs found.
 
