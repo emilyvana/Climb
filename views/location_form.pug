@@ -13,7 +13,7 @@ block content
       input#city.form-control(type='text', name='city', required, value=(location && location.city) ? location.city : '')
 
     div.form-group
-      label(for='wall') Wall (optional):
+      label(for='wall') Wall:
       select#wall.form-control(name='wall')
         option(value='') -- None --
         if wall_list
